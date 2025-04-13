@@ -4,25 +4,11 @@ import { useState, Dispatch, SetStateAction } from "react";
 
 interface BoardProps {
   board: string[];
-  setBoard: Dispatch<SetStateAction<string[]>>;
+  handleClick: (index: number) => void
 }
 
-export default function Board({board, setBoard}: BoardProps) {
-  const [xTurn, setXTurn] = useState(true);
+export default function Board({ board, handleClick }: BoardProps) {
 
-  const handleClick = (index: number) => {
-    if (board[index] === "") {
-      const newBoard = [...board];
-      if (xTurn) {
-        newBoard[index] = "X";
-        setXTurn(false);
-      } else {
-        newBoard[index] = "O";
-        setXTurn(true);
-      }
-      setBoard(newBoard);
-    }
-  };
   return (
     <div className="board">
       <div className="board-row">

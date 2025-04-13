@@ -1,7 +1,25 @@
+:root {
+  --bg-color: white;
+  --text-color: black;
+}
 .App {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 100vh;
+}
+.dark-mode-icon {
+  height: 3em;
+}
+.dark-mode-button {
+  background-color: var(--bg-color);
+  border: none;
+  position: absolute;
+  top: 1em;
+  right: 1em;
+}
+
+.dark-mode-icon:hover {
+  cursor: pointer;
 }
