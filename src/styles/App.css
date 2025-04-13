@@ -1,6 +1,10 @@
 :root {
-  --bg-color: white;
-  --text-color: black;
+  --bg-color: #ffffff;
+  --text-color: #1b1b1b;
+}
+body.dark-mode {
+  --bg-color: #1b1b1b;
+  --text-color: white;
 }
 .App {
   display: flex;
@@ -8,6 +12,8 @@
   justify-content: space-evenly;
   align-items: center;
   height: 100vh;
+  background-color: var(--bg-color);
+  color: var(--text-color);
 }
 .dark-mode-icon {
   height: 3em;

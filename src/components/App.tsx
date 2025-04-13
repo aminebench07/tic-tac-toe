@@ -2,9 +2,12 @@ import { useState } from "react";
 import "../styles/App.css";
 import Board from "./Board";
 import DarkModeLogo from "../assets/dark-mode.svg";
+import LightModeLogo from "../assets/light-mode.svg";
 function App() {
   const initialBoard = Array(9).fill("");
   const [board, setBoard] = useState<string[]>(initialBoard);
+
+  const [darkMode, setDarkMode] = useState(false);
 
   const [xTurn, setXTurn] = useState(true);
 
@@ -64,10 +67,16 @@ function App() {
 
   return (
     <div className="App">
-      <button className="dark-mode-button" onClick={() => {}}>
+      <button
+        className="dark-mode-button"
+        onClick={() => {
+          document.body.classList.toggle("dark-mode");
+          setDarkMode(!darkMode);
+        }}
+      >
         <img
           className="dark-mode-icon"
-          src={DarkModeLogo}
+          src={darkMode ? LightModeLogo : DarkModeLogo}
           alt="Switch Dark Mode"
         />
       </button>
