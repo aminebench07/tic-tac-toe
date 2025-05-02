@@ -11,7 +11,7 @@ function App() {
 
   const [xTurn, setXTurn] = useState(true);
 
-  function caluclateWinner(squares: string[]) {
+  function calculateWinner(squares: string[]) {
     const lines = [
       [0, 1, 2],
       [3, 4, 5],
@@ -38,7 +38,7 @@ function App() {
   }
 
   const handleClick = (index: number) => {
-    if (board[index] || caluclateWinner(board)) {
+    if (board[index] || calculateWinner(board)) {
       return;
     }
     const newBoard = [...board];
@@ -57,7 +57,7 @@ function App() {
     setXTurn(true);
   }
 
-  const winner = caluclateWinner(board);
+  const winner = calculateWinner(board);
 
   const status = !winner
     ? `Au tour de ${xTurn ? "X" : "O"}`

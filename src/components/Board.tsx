@@ -1,6 +1,5 @@
 import Square from "./Square";
 import "../styles/Board.css";
-import { useState, Dispatch, SetStateAction } from "react";
 
 interface BoardProps {
   board: string[];
